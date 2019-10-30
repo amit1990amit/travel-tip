@@ -1,3 +1,7 @@
+export default {
+    getLocs,
+    getPosition
+}
 var locs = [{lat: 11.22, lng: 22.11}]
 
 function getLocs() {
@@ -19,8 +23,3 @@ function getPosition() {
 }
 
 
-
-export default {
-    getLocs :getLocs,
-    getPosition: getPosition
-}

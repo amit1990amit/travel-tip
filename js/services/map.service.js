@@ -5,6 +5,7 @@ export default {
     panTo
 }
 
+const API_KEY = 'AIzaSyAdMoWVDMaktvgixBNYfaX6ErFO7LMW01Y';
 
 var map;
 
