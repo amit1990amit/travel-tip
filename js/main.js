@@ -20,7 +20,7 @@ window.onload = () => {
     locService.getPosition()
         .then(pos => {
             console.log('User position is:', pos.coords);
-            initMap(pos.coords.latitude, pos.coords.longitude);
+            // initMap(pos.coords.latitude, pos.coords.longitude);
         })
         .catch(err => {
             console.log('err!!!', err);
@@ -29,28 +29,12 @@ window.onload = () => {
 
 document.querySelector('.my-location').addEventListener('click', (ev) => {
     console.log('Aha!', ev.target);
-    mapService.panTo(35.6895, 139.6917);
+    navigator.geolocation.getCurrentPosition(showCurrLocation);
 })
 
-
-////////////////////////////////////////////////////////////////////////
-
-
-
-function getPosition() {
-    if (!navigator.geolocation) {
-        alert("HTML5 Geolocation is not supported in your browser.");
-        return;
-    }
-
-    // One shot position getting or continus watch
-    navigator.geolocation.getCurrentPosition(showLocation, handleLocationError);
-    // navigator.geolocation.watchPosition(showLocation, handleLocationError);
+function showCurrLocation(pos) {
+    mapService.panTo(pos.coords.latitude, pos.coords.longitude)
+    console.log(pos)
+    mapService.addMarker({ lat: pos.coords.latitude, lng: pos.coords.longitude })
 }
 
-
-
-function showLocation(position) {
-    // console.log(position);
-    initMap(position.coords.latitude, position.coords.longitude);
-}
