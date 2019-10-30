@@ -32,6 +32,21 @@ document.querySelector('.my-location').addEventListener('click', (ev) => {
     navigator.geolocation.getCurrentPosition(showCurrLocation);
 })
 
+
+document.querySelector('.go-to-location').addEventListener('click', (ev) => {
+    let newLocation = document.querySelector('.get-location').value;
+    console.log('newLocation ', newLocation);
+
+})
+
+
+// https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyAdMoWVDMaktvgixBNYfaX6ErFO7LMW01Y
+
+// console.log('Aha!', ev.target);
+// navigator.geolocation.getCurrentPosition(showCurrLocation);
+
+
+
 function showCurrLocation(pos) {
     mapService.panTo(pos.coords.latitude, pos.coords.longitude)
     console.log(pos)
