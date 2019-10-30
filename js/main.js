@@ -37,3 +37,13 @@ function showCurrLocation(pos) {
     console.log(pos)
     mapService.addMarker({ lat: pos.coords.latitude, lng: pos.coords.longitude })
 }
+
+
+document.querySelector('.go-to-location').addEventListener('click', (ev) => {
+    //console.log('Aha!', ev.target);
+    let newLocation = document.querySelector('.get-location').value;
+    let data = locService.getAddressLocation(newLocation);
+    console.log(data)
+    
+    //navigator.geolocation.getCurrentPosition(showCurrLocation);
+})

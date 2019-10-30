@@ -1,6 +1,7 @@
 export default {
     getLocs,
-    getPosition
+    getPosition,
+    getAddressLocation
 }
 
 
@@ -25,16 +26,10 @@ function getPosition() {
 }
 
 
-
-// function getPosition() {
-//     if (!navigator.geolocation) {
-//         alert("HTML5 Geolocation is not supported in your browser.");
-//         return;
-//     }
-
-//     // One shot position getting or continus watch
-//     navigator.geolocation.getCurrentPosition(showLocation, handleLocationError);
-//     // navigator.geolocation.watchPosition(showLocation, handleLocationError);
-// }
+function getAddressLocation(address){
+    return axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=AIzaSyAdMoWVDMaktvgixBNYfaX6ErFO7LMW01Y`)
+    .then(res => res.data.results)
+ 
+ }
 
 
