@@ -28,7 +28,7 @@ window.onload = () => {
 
 document.querySelector('.btn').addEventListener('click', (ev) => {
     console.log('Aha!', ev.target);
-    //mapService.panTo(35.6895, 139.6917);
+    mapService.panTo(35.6895, 139.6917);
 })
 
 
@@ -36,4 +36,13 @@ document.querySelector('.btn').addEventListener('click', (ev) => {
 
 
 
+function getPosition() {
+    if (!navigator.geolocation) {
+        alert("HTML5 Geolocation is not supported in your browser.");
+        return;
+    }
 
+    // One shot position getting or continus watch
+    navigator.geolocation.getCurrentPosition(showLocation, handleLocationError);
+    // navigator.geolocation.watchPosition(showLocation, handleLocationError);
+}
