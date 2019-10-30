@@ -28,3 +28,10 @@ button {
     margin: 2% 2% 2% 20%;
     
 }
+
+.weather-data{
+    width:30%;
+    height: 400px;
+    border: 1px solid black;
+
+}

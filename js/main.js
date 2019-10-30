@@ -46,6 +46,21 @@ document.querySelector('.go-to-location').addEventListener('click', (ev) => {
         var lng = res[0].geometry.location.lng
         mapService.panTo(lat,lng)
         mapService.addMarker({lat:lat, lng:lng})
+        locService.getWeather(lat,lng).then(res1 => {
+            console.log(res1)
+            let weather = res1.weather[0].description;
+            let tmp = res1.main.temp;
+            let humidity = res1.main.humidity;
+            renderData({weather, tmp, humidity})
+        })
     });
 })
 
+function renderData(data){
+    let elData = document.querySelector('.weather-data');
+    let strHtml = ''
+    for (let key in data){
+        strHtml += `<p>${key}: ${data[key]}</p>`
+    }
+    elData.innerHTML = strHtml;
+}
