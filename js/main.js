@@ -28,7 +28,11 @@ window.onload = () => {
 
 document.querySelector('.btn').addEventListener('click', (ev) => {
     console.log('Aha!', ev.target);
+<<<<<<< HEAD
     mapService.panTo(35.6895, 139.6917);
+=======
+    mapService.panTo(32.08227, 34.81065); // RAMAT GAN
+>>>>>>> 82036ddde6a443aa2c07a4f092ecdce63ca60f5c
 })
 
 
