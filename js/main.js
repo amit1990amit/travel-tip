@@ -27,7 +27,7 @@ window.onload = () => {
         })
 }
 
-document.querySelector('.btn').addEventListener('click', (ev) => {
+document.querySelector('.my-location').addEventListener('click', (ev) => {
     console.log('Aha!', ev.target);
     navigator.geolocation.getCurrentPosition(showCurrLocation);
 })
