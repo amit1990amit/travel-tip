@@ -40,10 +40,12 @@ function showCurrLocation(pos) {
 
 
 document.querySelector('.go-to-location').addEventListener('click', (ev) => {
-    //console.log('Aha!', ev.target);
     let newLocation = document.querySelector('.get-location').value;
-    let data = locService.getAddressLocation(newLocation);
-    console.log(data)
-    
-    //navigator.geolocation.getCurrentPosition(showCurrLocation);
+    locService.getAddressLocation(newLocation).then(res => {
+        var lat = res[0].geometry.location.lat
+        var lng = res[0].geometry.location.lng
+        mapService.panTo(lat,lng)
+        mapService.addMarker({lat:lat, lng:lng})
+    });
 })
+
