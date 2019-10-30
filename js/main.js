@@ -28,5 +28,5 @@ window.onload = () => {
 
 document.querySelector('.my-location').addEventListener('click', (ev) => {
     console.log('Aha!', ev.target);
-    mapService.panTo(32.08227, 34.81065);
+    mapService.panTo(32.08227, 34.81065); // RAMAT GAN
 })
