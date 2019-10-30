@@ -20,19 +20,16 @@ window.onload = () => {
     locService.getPosition()
         .then(pos => {
             console.log('User position is:', pos.coords);
+            initMap(pos.coords.latitude, pos.coords.longitude);
         })
         .catch(err => {
             console.log('err!!!', err);
         })
 }
 
-document.querySelector('.btn').addEventListener('click', (ev) => {
+document.querySelector('.my-location').addEventListener('click', (ev) => {
     console.log('Aha!', ev.target);
-<<<<<<< HEAD
     mapService.panTo(35.6895, 139.6917);
-=======
-    mapService.panTo(32.08227, 34.81065); // RAMAT GAN
->>>>>>> 82036ddde6a443aa2c07a4f092ecdce63ca60f5c
 })
 
 
@@ -49,4 +46,11 @@ function getPosition() {
     // One shot position getting or continus watch
     navigator.geolocation.getCurrentPosition(showLocation, handleLocationError);
     // navigator.geolocation.watchPosition(showLocation, handleLocationError);
+}
+
+
+
+function showLocation(position) {
+    // console.log(position);
+    initMap(position.coords.latitude, position.coords.longitude);
 }
