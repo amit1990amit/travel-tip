@@ -1,14 +1,28 @@
-h1 {
-    width: 20%;
+* {
+    margin: 0;
+    box-sizing: border-box;
 }
 
+body{
+    background-color:#52ac8a;
+}
+
+header{
+    width: 90vh;
+    margin: 10px auto;
+    text-align: center;
+}
+
+
+
 button {
-    background-color: gray;
+    background-color: #8b6eaa;
     color: white;
     margin: 2%;
     height: 40px;
     width: 15%;
     font-size: 1rem;
+    border-radius: 7px;
 }
 
 .go-to-location {
@@ -29,9 +43,24 @@ button {
     
 }
 
-.weather-data{
-    width:30%;
-    height: 400px;
-    border: 1px solid black;
+.container{
+    width: 90vw;
+    min-height: 400px;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
 
+.weather-data{
+    margin-left: 20px;
+    border: 1px solid black;
+}
+
+.weather-data > h2{
+    margin: 5px;
+    margin-bottom: 12px;
+}
+
+h2 > span{
+    color: #26429a;
 }

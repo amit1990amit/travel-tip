@@ -58,9 +58,9 @@ document.querySelector('.go-to-location').addEventListener('click', (ev) => {
 
 function renderData(data){
     let elData = document.querySelector('.weather-data');
-    let strHtml = ''
+    let strHtml = '<h2>The Weather</h2>'
     for (let key in data){
-        strHtml += `<p>${key}: ${data[key]}</p>`
+        strHtml += `<h2>${key}: <span>${data[key]}</span></h2>`
     }
     elData.innerHTML = strHtml;
 }
