@@ -37,4 +37,3 @@ function showCurrLocation(pos) {
     console.log(pos)
     mapService.addMarker({ lat: pos.coords.latitude, lng: pos.coords.longitude })
 }
-

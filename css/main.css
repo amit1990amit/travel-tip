@@ -1,0 +1,30 @@
+h1 {
+    width: 20%;
+}
+
+button {
+    background-color: gray;
+    color: white;
+    margin: 2%;
+    height: 40px;
+    width: 15%;
+    font-size: 1rem;
+}
+
+.go-to-location {
+    margin: 2% 2% 2% 0;
+    width: 5%;
+}
+
+.get-location{
+    height: 38px;
+    width: 25%;
+    text-align: center;
+    background-color: rgb(209, 202, 202);
+    color: white;
+}
+
+.copy-location {
+    margin: 2% 2% 2% 20%;
+    
+}
