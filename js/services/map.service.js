@@ -5,7 +5,7 @@ export default {
     panTo
 }
 
-const API_KEY = 'AIzaSyAdMoWVDMaktvgixBNYfaX6ErFO7LMW01Y';
+
 
 var map;
 
@@ -40,7 +40,7 @@ function panTo(lat, lng) {
 
 function _connectGoogleApi() {
     if (window.google) return Promise.resolve()
-    const API_KEY = ''; //TODO: Enter your API Key
+    const API_KEY = 'AIzaSyAdMoWVDMaktvgixBNYfaX6ErFO7LMW01Y'; //TODO: Enter your API Key
     var elGoogleApi = document.createElement('script');
     elGoogleApi.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`;
     elGoogleApi.async = true;
