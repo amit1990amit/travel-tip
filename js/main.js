@@ -20,6 +20,10 @@ window.onload = () => {
     locService.getPosition()
         .then(pos => {
             console.log('User position is:', pos.coords);
+<<<<<<< HEAD
+=======
+            // initMap(pos.coords.latitude, pos.coords.longitude);
+>>>>>>> 5453ad75ff8d62f4bb05a64bd88da31358de81a4
         })
         .catch(err => {
             console.log('err!!!', err);
@@ -28,21 +32,19 @@ window.onload = () => {
 
 document.querySelector('.btn').addEventListener('click', (ev) => {
     console.log('Aha!', ev.target);
+<<<<<<< HEAD
     mapService.panTo(32.08227, 34.81065); // RAMAT GAN
+=======
+    navigator.geolocation.getCurrentPosition(showCurrLocation);
+>>>>>>> 5453ad75ff8d62f4bb05a64bd88da31358de81a4
 })
 
-
-////////////////////////////////////////////////////////////////////////
-
-
-
-function getPosition() {
-    if (!navigator.geolocation) {
-        alert("HTML5 Geolocation is not supported in your browser.");
-        return;
-    }
-
-    // One shot position getting or continus watch
-    navigator.geolocation.getCurrentPosition(showLocation, handleLocationError);
-    // navigator.geolocation.watchPosition(showLocation, handleLocationError);
+function showCurrLocation(pos) {
+    mapService.panTo(pos.coords.latitude, pos.coords.longitude)
+    console.log(pos)
+    mapService.addMarker({ lat: pos.coords.latitude, lng: pos.coords.longitude })
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5453ad75ff8d62f4bb05a64bd88da31358de81a4
