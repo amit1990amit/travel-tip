@@ -37,7 +37,7 @@ function panTo(lat, lng) {
 
 function _connectGoogleApi() {
     if (window.google) return Promise.resolve()
-    const API_KEY = 'AIzaSyAdMoWVDMaktvgixBNYfaX6ErFO7LMW01Y'; //TODO: Enter your API Key
+    const API_KEY = 'AIzaSyAdMoWVDMaktvgixBNYfaX6ErFO7LMW01Y'; // API Key - Google
     var elGoogleApi = document.createElement('script');
     elGoogleApi.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`;
     elGoogleApi.async = true;
@@ -53,7 +53,7 @@ function _connectGoogleApi() {
 // WEATHER API
 function _connectWeatherApi() {
     if (window.google) return Promise.resolve() // ?
-    const W_KEY = '7cbe267230f50e0c17a4237c58492a01'; // Weather key
+    const W_KEY = '7cbe267230f50e0c17a4237c58492a01'; // API Key - Weather
     var elWheatherApi = document.createElement('script');
     elWheatherApi.src = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&APPID=${W_KEY}`;
     elWheatherApi.async = true;
